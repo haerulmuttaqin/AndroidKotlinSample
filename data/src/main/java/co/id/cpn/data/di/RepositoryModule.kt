@@ -13,7 +13,7 @@ import javax.inject.Singleton
 abstract class RepositoryModule {
 
     @Singleton
-    @Binds // <-- class selain library @Provide <-- class yg dari/berhubungan dgn library
+    @Binds // <-- for class other library @Provide <-- class yg dari/berhubungan dgn library
     internal abstract fun bindRepository(repositoryImpl: InventoryRepositoryImpl): InventoryRepository
     
 }

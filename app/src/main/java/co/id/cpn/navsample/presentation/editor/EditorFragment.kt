@@ -10,11 +10,11 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import co.id.cpn.entity.InventoryItem
-
 import co.id.cpn.navsample.databinding.FragmentEditorBinding
 import co.id.cpn.navsample.presentation.InventoryViewModel
-import co.id.cpn.navsample.presentation.InventoryViewModelFactory
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class EditorFragment : Fragment() {
 
     private var _binding: FragmentEditorBinding? = null
@@ -22,14 +22,8 @@ class EditorFragment : Fragment() {
 
     private val safeArgs: EditorFragmentArgs by navArgs()
     lateinit var inventoryItem: InventoryItem
-
-    /*private val inventoryViewModel: InventoryViewModel
-        get() {
-            TODO()
-        }*/
-     private val inventoryViewModel: InventoryViewModel by activityViewModels {
-         InventoryViewModelFactory.getInstance(requireContext())
-     }
+    
+     private val inventoryViewModel: InventoryViewModel by activityViewModels()
     
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

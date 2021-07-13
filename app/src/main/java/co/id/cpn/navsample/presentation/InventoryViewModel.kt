@@ -67,6 +67,5 @@ class InventoryViewModel @Inject constructor(private val interactor: InventoryIn
             interactor.delete(inventory)
         }
     }
-
     
 }

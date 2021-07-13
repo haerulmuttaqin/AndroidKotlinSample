@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listFragment">
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="co.id.cpn.navsample.presentation.detail.DetailFragment"
+        android:label="@string/fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="item_id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_detailFragment_to_editorFragment"
+            app:destination="@id/editorFragment" >
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="co.id.cpn.navsample.presentation.ListFragment"
+        android:label="@string/fragment_list"
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_listFragment_to_editorFragment"
+            app:destination="@id/editorFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editorFragment"
+        android:name="co.id.cpn.navsample.presentation.editor.EditorFragment"
+        android:label="@string/fragment_editor"
+        tools:layout="@layout/fragment_editor" >
+        <action
+            android:id="@+id/action_editorFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+        <argument
+            android:name="item_id"
+            app:argType="integer" />
+    </fragment>
+</navigation>

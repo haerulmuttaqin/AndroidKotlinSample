@@ -12,9 +12,8 @@ import androidx.navigation.fragment.navArgs
 import co.id.cpn.entity.InventoryItem
 import co.id.cpn.navsample.databinding.FragmentEditorBinding
 import co.id.cpn.navsample.presentation.InventoryViewModel
-import dagger.hilt.android.AndroidEntryPoint
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
-@AndroidEntryPoint
 class EditorFragment : Fragment() {
 
     private var _binding: FragmentEditorBinding? = null
@@ -23,7 +22,7 @@ class EditorFragment : Fragment() {
     private val safeArgs: EditorFragmentArgs by navArgs()
     lateinit var inventoryItem: InventoryItem
     
-     private val inventoryViewModel: InventoryViewModel by activityViewModels()
+     private val inventoryViewModel: InventoryViewModel by sharedViewModel()
     
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

@@ -30,6 +30,12 @@ ext {
             "roomCompiler"              : "androidx.room:room-compiler:2.3.0"
     ]
 
+    testing = [
+            "junit"                     : "junit:junit:4.+",
+            "extJunit"                  : "androidx.test.ext:junit:1.1.2",
+            "espressoCore"              : "androidx.test.espresso:espresso-core:3.3.0"
+    ]
+    
     misc = [
             "coroutinesCore"            : "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3",
             "coroutinesAndroid"         : "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3",
@@ -39,14 +45,13 @@ ext {
             "converterMoshi"            : "com.squareup.retrofit2:converter-moshi:2.5.0",
             "moshi"                     : "com.squareup.moshi:moshi:1.8.0",
             "moshiKotlin"               : "com.squareup.moshi:moshi-kotlin:1.8.0",
-            "glide"                     : "com.github.bumptech.glide:glide:4.8.0",*/
+            "glide"                     : "com.github.bumptech.glide:glide:4.8.0",
             "hiltAndroid"               : "com.google.dagger:hilt-android:2.35",
-            "hiltAndroidCompiler"       : "com.google.dagger:hilt-android-compiler:2.35"
-    ]
-
-    testing = [
-            "junit"                     : "junit:junit:4.+",
-            "extJunit"                  : "androidx.test.ext:junit:1.1.2",
-            "espressoCore"              : "androidx.test.espresso:espresso-core:3.3.0"
+            "hiltAndroidCompiler"       : "com.google.dagger:hilt-android-compiler:2.35",*/
+            "koinCore"                  : "org.koin:koin-core:2.1.6",
+            "koinAndroid"               : "org.koin:koin-android:2.1.6",
+            "koinAndroidScope"          : "org.koin:koin-androidx-scope:2.1.6",
+            "koinViewModel"             : "org.koin:koin-androidx-viewmodel:2.1.6",
+            "koinFragment"              : "org.koin:koin-androidx-fragment:2.1.6"
     ]
 }

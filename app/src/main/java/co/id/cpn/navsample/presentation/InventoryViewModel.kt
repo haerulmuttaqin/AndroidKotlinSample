@@ -5,12 +5,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import co.id.cpn.domain.usecase.InventoryInteractor
 import co.id.cpn.entity.InventoryItem
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
-@HiltViewModel
-class InventoryViewModel @Inject constructor(private val interactor: InventoryInteractor): ViewModel() {
+class InventoryViewModel constructor(private val interactor: InventoryInteractor): ViewModel() {
 
     val inventoryItems: LiveData<List<InventoryItem>> = interactor.getInventories()
     
@@ -34,9 +31,8 @@ class InventoryViewModel @Inject constructor(private val interactor: InventoryIn
     fun getInventory(id: Int): LiveData<InventoryItem> = interactor.getInventory(id)
     
     fun sellInventory(inventory: InventoryItem) {
-        if (inventory.quantityInStock > 0) {
-            val updatedInventory = inventory.copy(quantityInStock = inventory.quantityInStock - 1)
-            update(updatedInventory)
+        viewModelScope.launch { 
+            interactor.sell(inventory)
         }
     }
 

@@ -10,4 +10,5 @@ interface InventoryInteractor {
     suspend fun insert(inventory: InventoryItem)
     suspend fun delete(inventory: InventoryItem)
     suspend fun update(inventory: InventoryItem)
+    suspend fun sell(inventory: InventoryItem)
 }

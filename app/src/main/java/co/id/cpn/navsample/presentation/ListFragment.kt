@@ -9,15 +9,14 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import co.id.cpn.navsample.databinding.FragmentListBinding
-import dagger.hilt.android.AndroidEntryPoint
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
-@AndroidEntryPoint
 class ListFragment : Fragment() {
 
     private var _binding: FragmentListBinding? = null
     private val binding get() = _binding!!
 
-    private val inventoryViewModel: InventoryViewModel by activityViewModels()
+    private val inventoryViewModel: InventoryViewModel by sharedViewModel()
     
     private val inventoryAdapter: InventoryAdapter by lazy { 
         InventoryAdapter(

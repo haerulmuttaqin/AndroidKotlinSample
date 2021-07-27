@@ -66,4 +66,6 @@ dependencies {
     testImplementation rootProject.ext.testing.junit
     androidTestImplementation rootProject.ext.testing.extJunit
     androidTestImplementation rootProject.ext.testing.espressoCore
+    implementation "net.zetetic:android-database-sqlcipher:4.4.2"
+    implementation "androidx.sqlite:sqlite-ktx:2.1.0"
 }
